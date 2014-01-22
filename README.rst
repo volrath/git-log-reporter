@@ -41,7 +41,7 @@ Deployment and possible caveats
 Exposing this information to everyone using an open web server can be
 a risk for you, so you might want to only allow certain IP addresses
 to access the application. An example on how to do this using `Nginx`_
-and `uWSGI`_ can be found in ``nginx.conf.example``.
+and `gunicorn`_ can be found in ``nginx.conf.example``.
 
 Another thing to keep in mind is that the user running the application
 needs to be able to access your ``GIT_REPOS_PATH`` and every repo
@@ -49,4 +49,4 @@ you'd want a report of.
 
 .. _Flask: http://flask.pocoo.org/
 .. _Nginx: http://wiki.nginx.org/
-.. _uWSGI: https://uwsgi-docs.readthedocs.org/
+.. _gunicorn: http://gunicorn.org/
