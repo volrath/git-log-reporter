@@ -1,11 +1,11 @@
-import subprocess
+import os, subprocess
 
 from flask import Flask, jsonify, request
 
 app = Flask('__name__')
 app.debug = True
 
-GIT_REPOS_PATH = '/path/to/projects/'
+GIT_REPOS_PATH = '/home/volrath/projects'
 
 GIT_COMMIT_FIELDS = ['id', 'author_name', 'author_email', 'date', 'message']
 GIT_LOG_FORMAT = ['%H', '%an', '%ae', '%ad', '%s']
@@ -27,7 +27,8 @@ def report():
 
     response = {}
     for repo in request.json['repos']:
-        command = 'cd {}{} ; {}'.format(GIT_REPOS_PATH, repo, GIT_COMMAND)
+        path = os.path.join(GIT_REPOS_PATH, repo)
+        command = 'cd {} ; {}'.format(path, GIT_COMMAND)
         process = subprocess.Popen(command, shell=True, stdout=subprocess.PIPE,
                                    stderr=subprocess.PIPE)
         output, error = process.communicate()
