@@ -3,7 +3,7 @@ import os, subprocess
 from flask import Flask, jsonify, request
 
 app = Flask('__name__')
-app.debug = True
+app.debug = False
 
 GIT_REPOS_PATH = '/home/volrath/projects'
 
