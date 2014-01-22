@@ -20,7 +20,10 @@ def report():
 
     GIT_COMMAND = 'git log --format="{}"'.format(GIT_LOG_FORMAT)
     for key, value in request.json.get('options', {}).iteritems():
-        GIT_COMMAND += ' --{}="{}"'.format(key, value)
+        if value:
+            GIT_COMMAND += ' --{}="{}"'.format(key, value)
+        else:
+            GIT_COMMAND += ' --{}'.format(key)
 
     response = {}
     for repo in request.json['repos']:
