@@ -6,8 +6,8 @@ Small webservice built with `Flask`_ that gives a log report of
 requested repositories. This webservice responds to ``POST`` requests
 using ``Content-Type: application/json``.
 
-*Disclaimer* This is still beta. I'd recommend being careful if it's
- used in production.
+**Disclaimer:** This is still beta. I'd recommend being careful if
+it's used in production.
 
 
 Installation and basic usage
