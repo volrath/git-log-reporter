@@ -2,8 +2,8 @@
  Git Log Reporter
 ==================
 
-Small webservice built with `Flask`_ that gives a log report of
-requested repositories. This webservice responds to ``POST`` requests
+Small web service built with `Flask`_ that gives a log report of
+requested repositories. This web service responds to ``POST`` requests
 using ``Content-Type: application/json``.
 
 **Disclaimer:** This is still beta. I'd recommend being careful if
@@ -26,7 +26,7 @@ Then you can query the service with ``curl`` (or whatever)::
 
     curl -X POST -H 'Content-Type: application/json' -d '{"repos": ["myproject"], "options": {"author": "Daniel Barreto", "since": "1 day ago"}}' http://localhost:5000/
 
-The only required argument in the data passed to the webservice is
+The only required argument in the data passed to the web service is
 "repos" which needs to be a list of repository names existing on the
 ``GIT_REPOS_PATH``.
 

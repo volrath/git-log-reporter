@@ -5,7 +5,7 @@ from flask import Flask, jsonify, request
 app = Flask('__name__')
 app.debug = False
 
-GIT_REPOS_PATH = '/home/volrath/projects'
+GIT_REPOS_PATH = '/path/to/projects'
 
 GIT_COMMIT_FIELDS = ['id', 'author_name', 'author_email', 'date', 'message']
 GIT_LOG_FORMAT = ['%H', '%an', '%ae', '%ad', '%s']
