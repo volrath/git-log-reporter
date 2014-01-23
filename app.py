@@ -32,7 +32,7 @@ def report():
         process = subprocess.Popen(command, shell=True, stdout=subprocess.PIPE,
                                    stderr=subprocess.PIPE)
         output, error = process.communicate()
-        if error:
+        if error or not output:
             continue
         # dict the output
         output = output.strip('\n\x1e').split("\x1e")
